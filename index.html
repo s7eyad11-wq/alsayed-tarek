@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alsayed Tarek | Personal Profile</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="brand">
+      <span class="brand-logo">AT</span>
+      <span class="brand-name">Alsayed Tarek</span>
+    </div>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="themeBtn" type="button" aria-label="Toggle dark mode">
+      <span id="themeIcon">🌙</span> <span id="themeText">Dark mode</span>
+    </button>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="idcard">
+        <div class="photo-container">
+          <div class="photo" title="Click to view full photo" id="photoTrigger">
+            <img src="profile-card.jpg" alt="Alsayed Tarek Alsayed Elsopky" id="profileImg">
+            <span class="photo-zoom-hint" aria-hidden="true">🔍</span>
+          </div>
+          <span class="status-badge"><span class="status-dot"></span> Student</span>
+        </div>
+        <div class="idcard-info">
+          <span class="student-tag">FACULTY OF COMPUTERS</span>
+          <h1>Alsayed Tarek Alsayed Elsopky</h1>
+          <p class="role">Computer Science Student &amp; Aspiring Web Developer</p>
+          <dl class="facts">
+            <dt>Student ID</dt><dd>225109637</dd>
+            <dt>Course</dt><dd>Field Training I (FT-WEB-101)</dd>
+            <dt>Assignment</dt><dd>Task 1: Personal profile page</dd>
+          </dl>
+          <span class="stamp" id="greeting">Welcome</span>
+        </div>
+      </div>
+    </div>
+
+    <section id="about">
+      <h2>About me</h2>
+      <div class="card">
+        <p>I am a Computer Science student at the Faculty of Computers. I enjoy turning ideas into clean, working programs, and I am currently advancing my web development skills through Field Training I. This page is built with pure HTML, CSS, and modern JavaScript without external libraries, focusing on responsive design, performance, and accessibility.</p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills &amp; Interests</h2>
+      <div class="card two">
+        <div id="skillList"></div>
+        <div>
+          <h3>Interests &amp; Focus</h3>
+          <p style="margin-top:10px; color:var(--muted); line-height: 1.7;">Frontend &amp; Web Development, Problem Solving, Algorithms, Data Structures, and learning modern web technologies.</p>
+          <div class="interest-tags">
+            <span class="tag">Web Development</span>
+            <span class="tag">Problem Solving</span>
+            <span class="tag">Clean Code</span>
+            <span class="tag">UI / UX</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education &amp; Training</h2>
+      <div class="card">
+        <ul class="timeline">
+          <li>
+            <strong>Bachelor of Computer Science</strong>
+            <span class="when">Faculty of Computers &bull; In Progress</span>
+            <p class="timeline-desc">Studying core computer science fundamentals, programming concepts, and software engineering.</p>
+          </li>
+          <li>
+            <strong>Field Training I (FT-WEB-101)</strong>
+            <span class="when">Faculty Field Training &bull; Web Development</span>
+            <p class="timeline-desc">Task 1: Creating a responsive personal profile page with modern UI, dark mode, filtering, and form validation.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="web" aria-pressed="false">Web</button>
+        <button type="button" data-filter="other" aria-pressed="false">Other</button>
+      </div>
+      <div class="projects">
+        <article class="card project" data-type="web">
+          <h3>Personal Profile Page</h3>
+          <p>Responsive student ID profile featuring dark mode, dynamic greeting, skill progress bars, interactive filters, and form validation.</p>
+          <div class="tag-row">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </article>
+        <article class="card project" data-type="web">
+          <h3>Interactive Web Applications</h3>
+          <p>Upcoming hands-on projects and assignments developed during Field Training I coursework.</p>
+          <div class="tag-row">
+            <span class="tag">Web</span>
+            <span class="tag">In Progress</span>
+          </div>
+        </article>
+        <article class="card project" data-type="other">
+          <h3>Algorithms &amp; Problem Solving</h3>
+          <p>Solutions and console programs developed across academic courses in C++ / Java / Python.</p>
+          <div class="tag-row">
+            <span class="tag">Other</span>
+            <span class="tag">Academic</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Get In Touch</h2>
+      <div class="card">
+        <form id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input id="name" name="name" autocomplete="name" placeholder="Enter your full name">
+            <div class="error" id="nameErr"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="name@example.com">
+            <div class="error" id="emailErr"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Write your message here..."></textarea>
+            <div class="error" id="msgErr"></div>
+          </div>
+
+          <button class="primary" type="submit">Send Message</button>
+          <p id="formMsg" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Alsayed Tarek Alsayed Elsopky</strong> &bull; ID: 225109637</p>
+    <p>FT-WEB-101 &bull; Task 1: Personal Profile Page &bull; <span id="year"></span></p>
+  </footer>
+</div>
+
+<!-- Modal for viewing full photo -->
+<div id="photoModal" class="photo-modal" role="dialog" aria-modal="true" aria-label="Photo Preview" hidden>
+  <div class="photo-modal-backdrop"></div>
+  <div class="photo-modal-content">
+    <button type="button" class="photo-modal-close" id="modalClose" aria-label="Close photo preview">&times;</button>
+    <img src="profile.jpg" alt="Alsayed Tarek Alsayed Elsopky - Full Photo" class="photo-modal-img">
+    <p class="photo-modal-caption">Alsayed Tarek Alsayed Elsopky</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
